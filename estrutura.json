@@ -1,0 +1,3182 @@
+{
+  "jar": "AllLights.jar",
+  "nome_projeto": "alllights",
+  "midlet": "DS_AllLights",
+  "canvas": "dsCanvas",
+  "classes": [
+    {
+      "arquivo": "DS_AllLights.class",
+      "nome": "DS_AllLights",
+      "super": "MIDlet",
+      "campos": [
+        {
+          "nome": "_fld0",
+          "desc": "Ljavax/microedition/lcdui/Display;",
+          "tipo_c": "Display*"
+        },
+        {
+          "nome": "_fld5",
+          "desc": "LdsCanvas;",
+          "tipo_c": "dsCanvas*"
+        },
+        {
+          "nome": "_fld6",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        },
+        {
+          "nome": "_fld7",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        },
+        {
+          "nome": "_fld8",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        },
+        {
+          "nome": "_fld9",
+          "desc": "Ljavax/microedition/lcdui/Command;",
+          "tipo_c": "Command*"
+        }
+      ],
+      "metodos": [
+        {
+          "nome": "<init>",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 60,
+          "apis": {
+            "javax/microedition/midlet/MIDlet.<init>": 1,
+            "javax/microedition/lcdui/Command.<init>": 4,
+            "javax/microedition/lcdui/Display.getDisplay": 1,
+            "javax/microedition/lcdui/Displayable.addCommand": 2,
+            "javax/microedition/lcdui/Displayable.setCommandListener": 1
+          },
+          "constantes": [
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              22,
+              1
+            ],
+            [
+              23,
+              0
+            ],
+            [
+              30,
+              1
+            ],
+            [
+              31,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              1,
+              "javax/microedition/midlet/MIDlet.<init>"
+            ],
+            [
+              8,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              16,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              24,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              32,
+              "javax/microedition/lcdui/Command.<init>"
+            ],
+            [
+              36,
+              "javax/microedition/lcdui/Display.getDisplay"
+            ],
+            [
+              49,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              54,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              58,
+              "javax/microedition/lcdui/Displayable.setCommandListener"
+            ]
+          ],
+          "fields": [
+            [
+              9,
+              "putfield",
+              "DS_AllLights._fld6"
+            ],
+            [
+              17,
+              "putfield",
+              "DS_AllLights._fld7"
+            ],
+            [
+              25,
+              "putfield",
+              "DS_AllLights._fld8"
+            ],
+            [
+              33,
+              "putfield",
+              "DS_AllLights._fld9"
+            ],
+            [
+              37,
+              "putfield",
+              "DS_AllLights._fld0"
+            ],
+            [
+              42,
+              "getfield",
+              "DS_AllLights._fld0"
+            ],
+            [
+              44,
+              "putfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              46,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              48,
+              "getfield",
+              "DS_AllLights._fld7"
+            ],
+            [
+              51,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              53,
+              "getfield",
+              "DS_AllLights._fld6"
+            ],
+            [
+              56,
+              "getfield",
+              "DS_AllLights._fld5"
+            ]
+          ]
+        },
+        {
+          "nome": "commandAction",
+          "desc": "(Ljavax/microedition/lcdui/Command;Ljavax/microedition/lcdui/Displayable;)V",
+          "tipo_ret": "void",
+          "n_instr": 89,
+          "apis": {
+            "javax/microedition/midlet/MIDlet.notifyDestroyed": 1,
+            "javax/microedition/lcdui/Displayable.removeCommand": 4,
+            "javax/microedition/lcdui/Displayable.addCommand": 4,
+            "javax/microedition/lcdui/Displayable.setCommandListener": 3
+          },
+          "constantes": [
+            [
+              5,
+              0
+            ],
+            [
+              31,
+              1
+            ],
+            [
+              54,
+              2
+            ],
+            [
+              82,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              8,
+              "javax/microedition/midlet/MIDlet.notifyDestroyed"
+            ],
+            [
+              18,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              23,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              28,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              36,
+              "javax/microedition/lcdui/Displayable.setCommandListener"
+            ],
+            [
+              46,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              51,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              59,
+              "javax/microedition/lcdui/Displayable.setCommandListener"
+            ],
+            [
+              69,
+              "javax/microedition/lcdui/Displayable.removeCommand"
+            ],
+            [
+              74,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              79,
+              "javax/microedition/lcdui/Displayable.addCommand"
+            ],
+            [
+              87,
+              "javax/microedition/lcdui/Displayable.setCommandListener"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "DS_AllLights._fld6"
+            ],
+            [
+              12,
+              "getfield",
+              "DS_AllLights._fld7"
+            ],
+            [
+              15,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              17,
+              "getfield",
+              "DS_AllLights._fld6"
+            ],
+            [
+              20,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              22,
+              "getfield",
+              "DS_AllLights._fld7"
+            ],
+            [
+              25,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              27,
+              "getfield",
+              "DS_AllLights._fld9"
+            ],
+            [
+              30,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              32,
+              "putfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              34,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              40,
+              "getfield",
+              "DS_AllLights._fld9"
+            ],
+            [
+              43,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              45,
+              "getfield",
+              "DS_AllLights._fld9"
+            ],
+            [
+              48,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              50,
+              "getfield",
+              "DS_AllLights._fld8"
+            ],
+            [
+              53,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              55,
+              "putfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              57,
+              "getfield",
+              "DS_AllLights._fld5"
+            ],
+            [
+              63,
+              "getfield",
+              "DS_AllLights._fld8"
+            ]
+          ]
+        },
+        {
+          "nome": "destroyApp",
+          "desc": "(Z)V",
+          "tipo_ret": "void",
+          "n_instr": 8,
+          "apis": {
+            "javax/microedition/lcdui/Display.setCurrent": 1
+          },
+          "constantes": [],
+          "chamadas": [
+            [
+              3,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "DS_AllLights._fld0"
+            ],
+            [
+              5,
+              "getfield",
+              "DS_AllLights._fld5"
+            ]
+          ]
+        },
+        {
+          "nome": "pauseApp",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "DS_AllLights._fld5"
+            ]
+          ]
+        },
+        {
+          "nome": "startApp",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "DS_AllLights._fld5"
+            ]
+          ]
+        }
+      ],
+      "apis": {
+        "javax/microedition/midlet/MIDlet.<init>": 1,
+        "javax/microedition/lcdui/Command.<init>": 4,
+        "javax/microedition/lcdui/Display.getDisplay": 1,
+        "javax/microedition/lcdui/Displayable.addCommand": 6,
+        "javax/microedition/lcdui/Displayable.setCommandListener": 4,
+        "javax/microedition/midlet/MIDlet.notifyDestroyed": 1,
+        "javax/microedition/lcdui/Displayable.removeCommand": 4,
+        "javax/microedition/lcdui/Display.setCurrent": 1
+      },
+      "padroes": [
+        "MIDLET",
+        "TEM_STARTAPP"
+      ]
+    },
+    {
+      "arquivo": "dsCanvas.class",
+      "nome": "dsCanvas",
+      "super": "Canvas",
+      "campos": [
+        {
+          "nome": "_fld0",
+          "desc": "Ljavax/microedition/lcdui/Display;",
+          "tipo_c": "Display*"
+        },
+        {
+          "nome": "_fld0b",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld1b",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld2b",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld3b",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld4b",
+          "desc": "Ljavax/microedition/lcdui/Font;",
+          "tipo_c": "Font*"
+        },
+        {
+          "nome": "_fld5b",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld6b",
+          "desc": "Ljavax/microedition/lcdui/Image;",
+          "tipo_c": "Image*"
+        },
+        {
+          "nome": "_fld7b",
+          "desc": "Ljavax/microedition/lcdui/Graphics;",
+          "tipo_c": "Graphics*"
+        },
+        {
+          "nome": "_fld8b",
+          "desc": "Ljava/util/Random;",
+          "tipo_c": "Random*"
+        },
+        {
+          "nome": "_fld9b",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld0c",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld1c",
+          "desc": "Ljava/lang/Thread;",
+          "tipo_c": "Thread*"
+        },
+        {
+          "nome": "_fld2c",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld3c",
+          "desc": "Z",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld4c",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld5c",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld6c",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld7c",
+          "desc": "Ljava/lang/String;",
+          "tipo_c": "String*"
+        },
+        {
+          "nome": "_fld8c",
+          "desc": "[B",
+          "tipo_c": "signed char*"
+        },
+        {
+          "nome": "_fld9c",
+          "desc": "Ljava/lang/String;",
+          "tipo_c": "String*"
+        },
+        {
+          "nome": "_fld0d",
+          "desc": "[B",
+          "tipo_c": "signed char*"
+        },
+        {
+          "nome": "_fld1d",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld2d",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld3d",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld4d",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld5d",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld6d",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld7d",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld8d",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld9d",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld0e",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld1e",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld2e",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld3e",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld4e",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld5e",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld6e",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld7e",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "_fld8e",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "nb",
+          "desc": "I",
+          "tipo_c": "int"
+        },
+        {
+          "nome": "ar",
+          "desc": "[I",
+          "tipo_c": "int*"
+        },
+        {
+          "nome": "_fld9e",
+          "desc": "I",
+          "tipo_c": "int"
+        }
+      ],
+      "metodos": [
+        {
+          "nome": "<clinit>",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 5,
+          "apis": {
+            "java/util/Random.<init>": 1
+          },
+          "constantes": [],
+          "chamadas": [
+            [
+              2,
+              "java/util/Random.<init>"
+            ]
+          ],
+          "fields": [
+            [
+              3,
+              "putstatic",
+              "dsCanvas._fld8b"
+            ]
+          ]
+        },
+        {
+          "nome": "<init>",
+          "desc": "(Ljavax/microedition/lcdui/Display;)V",
+          "tipo_ret": "void",
+          "n_instr": 210,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.<init>": 1,
+            "java/lang/String.<init>": 2,
+            "javax/microedition/lcdui/Canvas.getWidth": 1,
+            "javax/microedition/lcdui/Canvas.getHeight": 1,
+            "javax/microedition/lcdui/Image.createImage": 1,
+            "javax/microedition/lcdui/Image.getGraphics": 1,
+            "javax/microedition/lcdui/Font.getFont": 2,
+            "javax/microedition/lcdui/Font.getHeight": 1,
+            "javax/microedition/lcdui/Display.isColor": 1,
+            "javax/microedition/lcdui/Display.numColors": 2
+          },
+          "constantes": [
+            [
+              3,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              19,
+              0
+            ],
+            [
+              45,
+              1
+            ],
+            [
+              48,
+              17
+            ],
+            [
+              52,
+              17
+            ],
+            [
+              59,
+              200
+            ],
+            [
+              63,
+              200
+            ],
+            [
+              66,
+              0
+            ],
+            [
+              67,
+              0
+            ],
+            [
+              68,
+              0
+            ],
+            [
+              73,
+              0
+            ],
+            [
+              74,
+              0
+            ],
+            [
+              75,
+              8
+            ],
+            [
+              82,
+              2
+            ],
+            [
+              89,
+              1
+            ],
+            [
+              93,
+              4
+            ],
+            [
+              96,
+              1
+            ],
+            [
+              103,
+              1
+            ],
+            [
+              109,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              1,
+              "javax/microedition/lcdui/Canvas.<init>"
+            ],
+            [
+              11,
+              "java/lang/String.<init>"
+            ],
+            [
+              16,
+              "java/lang/String.<init>"
+            ],
+            [
+              26,
+              "javax/microedition/lcdui/Canvas.getWidth"
+            ],
+            [
+              30,
+              "javax/microedition/lcdui/Canvas.getHeight"
+            ],
+            [
+              37,
+              "javax/microedition/lcdui/Image.createImage"
+            ],
+            [
+              42,
+              "javax/microedition/lcdui/Image.getGraphics"
+            ],
+            [
+              69,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              76,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              81,
+              "javax/microedition/lcdui/Font.getHeight"
+            ],
+            [
+              86,
+              "javax/microedition/lcdui/Display.isColor"
+            ],
+            [
+              92,
+              "javax/microedition/lcdui/Display.numColors"
+            ],
+            [
+              120,
+              "javax/microedition/lcdui/Display.numColors"
+            ]
+          ],
+          "fields": [
+            [
+              4,
+              "putfield",
+              "dsCanvas._fld2c"
+            ],
+            [
+              7,
+              "putfield",
+              "dsCanvas._fld3c"
+            ],
+            [
+              12,
+              "putfield",
+              "dsCanvas._fld7c"
+            ],
+            [
+              17,
+              "putfield",
+              "dsCanvas._fld9c"
+            ],
+            [
+              20,
+              "putfield",
+              "dsCanvas._fld5e"
+            ],
+            [
+              23,
+              "putfield",
+              "dsCanvas._fld0"
+            ],
+            [
+              27,
+              "putfield",
+              "dsCanvas._fld0b"
+            ],
+            [
+              31,
+              "putfield",
+              "dsCanvas._fld1b"
+            ],
+            [
+              34,
+              "getfield",
+              "dsCanvas._fld0b"
+            ],
+            [
+              36,
+              "getfield",
+              "dsCanvas._fld1b"
+            ],
+            [
+              38,
+              "putfield",
+              "dsCanvas._fld6b"
+            ],
+            [
+              41,
+              "getfield",
+              "dsCanvas._fld6b"
+            ],
+            [
+              43,
+              "putfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              46,
+              "putfield",
+              "dsCanvas._fld0c"
+            ],
+            [
+              50,
+              "putfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              54,
+              "putfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              58,
+              "getfield",
+              "dsCanvas._fld0b"
+            ],
+            [
+              62,
+              "getfield",
+              "dsCanvas._fld1b"
+            ],
+            [
+              70,
+              "putfield",
+              "dsCanvas._fld4b"
+            ],
+            [
+              77,
+              "putfield",
+              "dsCanvas._fld4b"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth0b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "dsCanvas._fld9b"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth0c",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 146,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 4,
+            "javax/microedition/lcdui/Graphics.fillRect": 1,
+            "javax/microedition/lcdui/Font.getFont": 1,
+            "javax/microedition/lcdui/Font.stringWidth": 2,
+            "javax/microedition/lcdui/Graphics.setFont": 1,
+            "javax/microedition/lcdui/Font.getHeight": 1,
+            "javax/microedition/lcdui/Graphics.drawString": 6
+          },
+          "constantes": [
+            [
+              1,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              20,
+              0
+            ],
+            [
+              21,
+              1
+            ],
+            [
+              22,
+              8
+            ],
+            [
+              51,
+              1
+            ],
+            [
+              55,
+              36
+            ],
+            [
+              60,
+              1
+            ],
+            [
+              73,
+              2
+            ],
+            [
+              76,
+              36
+            ],
+            [
+              82,
+              3
+            ],
+            [
+              85,
+              36
+            ],
+            [
+              91,
+              4
+            ],
+            [
+              94,
+              36
+            ],
+            [
+              100,
+              5
+            ],
+            [
+              103,
+              36
+            ],
+            [
+              109,
+              3
+            ],
+            [
+              113,
+              4
+            ]
+          ],
+          "chamadas": [
+            [
+              10,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              19,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              23,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              27,
+              "javax/microedition/lcdui/Font.stringWidth"
+            ],
+            [
+              32,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              35,
+              "javax/microedition/lcdui/Font.stringWidth"
+            ],
+            [
+              38,
+              "javax/microedition/lcdui/Font.getHeight"
+            ],
+            [
+              44,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              56,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              68,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              77,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              86,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              95,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              104,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              127,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              142,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "dsCanvas._fld7e"
+            ],
+            [
+              5,
+              "putfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              7,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              9,
+              "getfield",
+              "dsCanvas._fld5d"
+            ],
+            [
+              12,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              16,
+              "getfield",
+              "dsCanvas._fld0b"
+            ],
+            [
+              18,
+              "getfield",
+              "dsCanvas._fld1b"
+            ],
+            [
+              30,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              41,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              43,
+              "getfield",
+              "dsCanvas._fld6d"
+            ],
+            [
+              46,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              49,
+              "getfield",
+              "dsCanvas._fld5c"
+            ],
+            [
+              58,
+              "getfield",
+              "dsCanvas._fld5c"
+            ],
+            [
+              65,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              67,
+              "getfield",
+              "dsCanvas._fld7d"
+            ],
+            [
+              70,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              79,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              88,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              97,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              106,
+              "getfield",
+              "dsCanvas._fld1d"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth1b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 141,
+          "apis": {},
+          "constantes": [
+            [
+              2,
+              7
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              6,
+              105
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              18,
+              2
+            ],
+            [
+              19,
+              119
+            ],
+            [
+              27,
+              13
+            ],
+            [
+              30,
+              5
+            ],
+            [
+              33,
+              16
+            ],
+            [
+              34,
+              97
+            ],
+            [
+              42,
+              3
+            ],
+            [
+              45,
+              13
+            ],
+            [
+              46,
+              46
+            ],
+            [
+              52,
+              8
+            ],
+            [
+              55,
+              15
+            ],
+            [
+              56,
+              111
+            ],
+            [
+              62,
+              5
+            ],
+            [
+              65,
+              12
+            ],
+            [
+              66,
+              115
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              4,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              11,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              14,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              17,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              26,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              29,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              32,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              41,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              44,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              51,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              54,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              61,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              64,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              71,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              74,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              81,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              84,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              91,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              94,
+              "getfield",
+              "dsCanvas._fld0d"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth1c",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 4,
+          "apis": {},
+          "constantes": [
+            [
+              1,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              2,
+              "putfield",
+              "dsCanvas._fld9b"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth2b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 55,
+          "apis": {
+            "java/lang/String.<init>": 2
+          },
+          "constantes": [
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              40
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              8,
+              109
+            ],
+            [
+              12,
+              2
+            ],
+            [
+              13,
+              41
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              18,
+              68
+            ],
+            [
+              22,
+              4
+            ],
+            [
+              23,
+              100
+            ],
+            [
+              27,
+              6
+            ],
+            [
+              28,
+              114
+            ],
+            [
+              32,
+              11
+            ],
+            [
+              33,
+              116
+            ],
+            [
+              37,
+              10
+            ],
+            [
+              38,
+              83
+            ]
+          ],
+          "chamadas": [
+            [
+              45,
+              "java/lang/String.<init>"
+            ],
+            [
+              52,
+              "java/lang/String.<init>"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              6,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              11,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              16,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              21,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              26,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              31,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              36,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              44,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              46,
+              "putfield",
+              "dsCanvas._fld7c"
+            ],
+            [
+              51,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              53,
+              "putfield",
+              "dsCanvas._fld9c"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth2c",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 33,
+          "apis": {
+            "javax/microedition/lcdui/Display.setCurrent": 1,
+            "java/lang/Thread.<init>": 1,
+            "java/lang/Thread.isAlive": 1,
+            "java/lang/Thread.start": 1
+          },
+          "constantes": [
+            [
+              17,
+              0
+            ],
+            [
+              21,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              3,
+              "javax/microedition/lcdui/Display.setCurrent"
+            ],
+            [
+              11,
+              "java/lang/Thread.<init>"
+            ],
+            [
+              25,
+              "java/lang/Thread.isAlive"
+            ],
+            [
+              29,
+              "java/lang/Thread.start"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld0"
+            ],
+            [
+              5,
+              "getfield",
+              "dsCanvas._fld1c"
+            ],
+            [
+              12,
+              "putfield",
+              "dsCanvas._fld1c"
+            ],
+            [
+              14,
+              "getfield",
+              "dsCanvas._fld0c"
+            ],
+            [
+              18,
+              "putfield",
+              "dsCanvas._fld9b"
+            ],
+            [
+              22,
+              "putfield",
+              "dsCanvas._fld9b"
+            ],
+            [
+              24,
+              "getfield",
+              "dsCanvas._fld1c"
+            ],
+            [
+              28,
+              "getfield",
+              "dsCanvas._fld1c"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth3b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 58,
+          "apis": {
+            "java/lang/Math.min": 2
+          },
+          "constantes": [
+            [
+              21,
+              1
+            ],
+            [
+              35,
+              1
+            ],
+            [
+              41,
+              0
+            ],
+            [
+              47,
+              0
+            ]
+          ],
+          "chamadas": [
+            [
+              8,
+              "java/lang/Math.min"
+            ],
+            [
+              20,
+              "java/lang/Math.min"
+            ]
+          ],
+          "fields": [
+            [
+              2,
+              "getfield",
+              "dsCanvas._fld0b"
+            ],
+            [
+              4,
+              "getfield",
+              "dsCanvas._fld1b"
+            ],
+            [
+              6,
+              "getfield",
+              "dsCanvas._fld5b"
+            ],
+            [
+              10,
+              "getfield",
+              "dsCanvas.nb"
+            ],
+            [
+              12,
+              "putfield",
+              "dsCanvas._fld6e"
+            ],
+            [
+              14,
+              "getfield",
+              "dsCanvas._fld0b"
+            ],
+            [
+              16,
+              "getfield",
+              "dsCanvas._fld1b"
+            ],
+            [
+              18,
+              "getfield",
+              "dsCanvas._fld5b"
+            ],
+            [
+              26,
+              "getfield",
+              "dsCanvas._fld5c"
+            ],
+            [
+              29,
+              "putfield",
+              "dsCanvas._fld2b"
+            ],
+            [
+              32,
+              "getfield",
+              "dsCanvas._fld6c"
+            ],
+            [
+              34,
+              "getfield",
+              "dsCanvas._fld5b"
+            ],
+            [
+              40,
+              "putfield",
+              "dsCanvas._fld3b"
+            ],
+            [
+              45,
+              "getfield",
+              "dsCanvas.ar"
+            ],
+            [
+              52,
+              "getfield",
+              "dsCanvas.nb"
+            ],
+            [
+              54,
+              "getfield",
+              "dsCanvas.nb"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth4b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 23,
+          "apis": {},
+          "constantes": [
+            [
+              8,
+              1
+            ],
+            [
+              15,
+              2
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              7,
+              "getfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              14,
+              "getfield",
+              "dsCanvas._fld9e"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth5b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 28,
+          "apis": {},
+          "constantes": [
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              100
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              10,
+              68
+            ],
+            [
+              14,
+              11
+            ],
+            [
+              16,
+              116
+            ],
+            [
+              20,
+              16
+            ],
+            [
+              22,
+              97
+            ],
+            [
+              25,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              7,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              13,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              19,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              26,
+              "putfield",
+              "dsCanvas._fld0c"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth6b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 28,
+          "apis": {},
+          "constantes": [
+            [
+              2,
+              5
+            ],
+            [
+              4,
+              115
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              10,
+              99
+            ],
+            [
+              14,
+              15
+            ],
+            [
+              16,
+              111
+            ],
+            [
+              20,
+              12
+            ],
+            [
+              22,
+              105
+            ],
+            [
+              25,
+              0
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              7,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              13,
+              "getfield",
+              "dsCanvas._fld8c"
+            ],
+            [
+              19,
+              "getfield",
+              "dsCanvas._fld0d"
+            ],
+            [
+              26,
+              "putfield",
+              "dsCanvas._fld0c"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth7b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 53,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 2,
+            "javax/microedition/lcdui/Graphics.fillRect": 1,
+            "javax/microedition/lcdui/Font.getFont": 1,
+            "javax/microedition/lcdui/Font.stringWidth": 1,
+            "javax/microedition/lcdui/Graphics.setFont": 1,
+            "javax/microedition/lcdui/Font.getHeight": 1,
+            "javax/microedition/lcdui/Graphics.drawString": 1
+          },
+          "constantes": [
+            [
+              9,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              17,
+              0
+            ],
+            [
+              18,
+              8
+            ],
+            [
+              40,
+              1
+            ],
+            [
+              47,
+              1
+            ],
+            [
+              50,
+              36
+            ]
+          ],
+          "chamadas": [
+            [
+              6,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              15,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              19,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              23,
+              "javax/microedition/lcdui/Font.stringWidth"
+            ],
+            [
+              28,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              33,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              46,
+              "javax/microedition/lcdui/Font.getHeight"
+            ],
+            [
+              51,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ]
+          ],
+          "fields": [
+            [
+              3,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              5,
+              "getfield",
+              "dsCanvas._fld1e"
+            ],
+            [
+              8,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              12,
+              "getfield",
+              "dsCanvas._fld0b"
+            ],
+            [
+              14,
+              "getfield",
+              "dsCanvas._fld1b"
+            ],
+            [
+              26,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              30,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              32,
+              "getfield",
+              "dsCanvas._fld2e"
+            ],
+            [
+              35,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              38,
+              "getfield",
+              "dsCanvas._fld5c"
+            ],
+            [
+              44,
+              "getfield",
+              "dsCanvas._fld6c"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth8b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 304,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 7,
+            "javax/microedition/lcdui/Graphics.fillRect": 3,
+            "javax/microedition/lcdui/Graphics.drawRect": 1,
+            "javax/microedition/lcdui/Graphics.drawLine": 2,
+            "javax/microedition/lcdui/Graphics.setFont": 1,
+            "javax/microedition/lcdui/Font.stringWidth": 1,
+            "javax/microedition/lcdui/Graphics.drawString": 1
+          },
+          "constantes": [
+            [
+              7,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              17,
+              0
+            ],
+            [
+              43,
+              1
+            ],
+            [
+              47,
+              1
+            ],
+            [
+              74,
+              2
+            ],
+            [
+              83,
+              2
+            ],
+            [
+              87,
+              4
+            ],
+            [
+              91,
+              4
+            ],
+            [
+              137,
+              4
+            ],
+            [
+              147,
+              4
+            ],
+            [
+              153,
+              1
+            ],
+            [
+              159,
+              4
+            ],
+            [
+              161,
+              1
+            ],
+            [
+              167,
+              1
+            ],
+            [
+              173,
+              4
+            ],
+            [
+              175,
+              1
+            ],
+            [
+              184,
+              1
+            ],
+            [
+              190,
+              4
+            ]
+          ],
+          "chamadas": [
+            [
+              4,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              13,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              24,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              49,
+              "javax/microedition/lcdui/Graphics.drawRect"
+            ],
+            [
+              64,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              93,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              120,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              126,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              177,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              228,
+              "javax/microedition/lcdui/Graphics.drawLine"
+            ],
+            [
+              233,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              238,
+              "javax/microedition/lcdui/Font.stringWidth"
+            ],
+            [
+              244,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              255,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              260,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              273,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              3,
+              "getfield",
+              "dsCanvas._fld1e"
+            ],
+            [
+              6,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              10,
+              "getfield",
+              "dsCanvas._fld0b"
+            ],
+            [
+              12,
+              "getfield",
+              "dsCanvas._fld1b"
+            ],
+            [
+              21,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              23,
+              "getfield",
+              "dsCanvas._fld2e"
+            ],
+            [
+              26,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              28,
+              "getfield",
+              "dsCanvas._fld2b"
+            ],
+            [
+              31,
+              "getfield",
+              "dsCanvas._fld6e"
+            ],
+            [
+              35,
+              "getfield",
+              "dsCanvas._fld3b"
+            ],
+            [
+              38,
+              "getfield",
+              "dsCanvas._fld6e"
+            ],
+            [
+              42,
+              "getfield",
+              "dsCanvas._fld6e"
+            ],
+            [
+              46,
+              "getfield",
+              "dsCanvas._fld6e"
+            ],
+            [
+              51,
+              "getfield",
+              "dsCanvas.ar"
+            ],
+            [
+              54,
+              "getfield",
+              "dsCanvas.nb"
+            ],
+            [
+              61,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              63,
+              "getfield",
+              "dsCanvas._fld3e"
+            ],
+            [
+              66,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              68,
+              "getfield",
+              "dsCanvas._fld2b"
+            ]
+          ]
+        },
+        {
+          "nome": "_mth9b",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 138,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.setColor": 4,
+            "javax/microedition/lcdui/Graphics.fillRect": 1,
+            "javax/microedition/lcdui/Font.getFont": 2,
+            "javax/microedition/lcdui/Font.stringWidth": 3,
+            "javax/microedition/lcdui/Graphics.setFont": 2,
+            "javax/microedition/lcdui/Font.getHeight": 3,
+            "javax/microedition/lcdui/Graphics.drawString": 3
+          },
+          "constantes": [
+            [
+              9,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              17,
+              1
+            ],
+            [
+              18,
+              16
+            ],
+            [
+              36,
+              1
+            ],
+            [
+              48,
+              1
+            ],
+            [
+              52,
+              36
+            ],
+            [
+              54,
+              0
+            ],
+            [
+              55,
+              0
+            ],
+            [
+              56,
+              8
+            ],
+            [
+              80,
+              1
+            ],
+            [
+              86,
+              1
+            ],
+            [
+              89,
+              4
+            ],
+            [
+              91,
+              36
+            ],
+            [
+              103,
+              1
+            ],
+            [
+              106,
+              5
+            ],
+            [
+              119,
+              1
+            ],
+            [
+              126,
+              1
+            ],
+            [
+              129,
+              36
+            ]
+          ],
+          "chamadas": [
+            [
+              6,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              15,
+              "javax/microedition/lcdui/Graphics.fillRect"
+            ],
+            [
+              19,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              23,
+              "javax/microedition/lcdui/Font.stringWidth"
+            ],
+            [
+              28,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              33,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              39,
+              "javax/microedition/lcdui/Font.getHeight"
+            ],
+            [
+              53,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              57,
+              "javax/microedition/lcdui/Font.getFont"
+            ],
+            [
+              62,
+              "javax/microedition/lcdui/Graphics.setFont"
+            ],
+            [
+              66,
+              "javax/microedition/lcdui/Font.stringWidth"
+            ],
+            [
+              72,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              85,
+              "javax/microedition/lcdui/Font.getHeight"
+            ],
+            [
+              92,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ],
+            [
+              97,
+              "javax/microedition/lcdui/Font.stringWidth"
+            ],
+            [
+              112,
+              "javax/microedition/lcdui/Graphics.setColor"
+            ],
+            [
+              125,
+              "javax/microedition/lcdui/Font.getHeight"
+            ],
+            [
+              130,
+              "javax/microedition/lcdui/Graphics.drawString"
+            ]
+          ],
+          "fields": [
+            [
+              3,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              5,
+              "getfield",
+              "dsCanvas._fld2d"
+            ],
+            [
+              8,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              12,
+              "getfield",
+              "dsCanvas._fld0b"
+            ],
+            [
+              14,
+              "getfield",
+              "dsCanvas._fld1b"
+            ],
+            [
+              26,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              30,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              32,
+              "getfield",
+              "dsCanvas._fld3d"
+            ],
+            [
+              35,
+              "getfield",
+              "dsCanvas._fld6c"
+            ],
+            [
+              43,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              46,
+              "getfield",
+              "dsCanvas._fld5c"
+            ],
+            [
+              60,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              65,
+              "getfield",
+              "dsCanvas._fld7c"
+            ],
+            [
+              69,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              71,
+              "getfield",
+              "dsCanvas._fld4d"
+            ],
+            [
+              74,
+              "getfield",
+              "dsCanvas._fld7b"
+            ],
+            [
+              76,
+              "getfield",
+              "dsCanvas._fld7c"
+            ],
+            [
+              78,
+              "getfield",
+              "dsCanvas._fld5c"
+            ],
+            [
+              101,
+              "getfield",
+              "dsCanvas._fld5e"
+            ],
+            [
+              105,
+              "putfield",
+              "dsCanvas._fld5e"
+            ]
+          ]
+        },
+        {
+          "nome": "keyPressed",
+          "desc": "(I)V",
+          "tipo_ret": "void",
+          "n_instr": 206,
+          "apis": {
+            "javax/microedition/lcdui/Canvas.getGameAction": 1
+          },
+          "constantes": [
+            [
+              6,
+              1
+            ],
+            [
+              10,
+              6
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              21,
+              2
+            ],
+            [
+              27,
+              2
+            ],
+            [
+              33,
+              1
+            ],
+            [
+              39,
+              1
+            ],
+            [
+              43,
+              3
+            ],
+            [
+              48,
+              1
+            ],
+            [
+              54,
+              2
+            ],
+            [
+              62,
+              1
+            ],
+            [
+              68,
+              2
+            ],
+            [
+              76,
+              1
+            ],
+            [
+              82,
+              2
+            ],
+            [
+              88,
+              2
+            ],
+            [
+              94,
+              1
+            ],
+            [
+              100,
+              2
+            ],
+            [
+              114,
+              1
+            ],
+            [
+              130,
+              1
+            ],
+            [
+              134,
+              1
+            ]
+          ],
+          "chamadas": [
+            [
+              2,
+              "javax/microedition/lcdui/Canvas.getGameAction"
+            ]
+          ],
+          "fields": [
+            [
+              5,
+              "getfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              9,
+              "getfield",
+              "dsCanvas._fld1d"
+            ],
+            [
+              14,
+              "getfield",
+              "dsCanvas._fld1d"
+            ],
+            [
+              17,
+              "putfield",
+              "dsCanvas._fld1d"
+            ],
+            [
+              20,
+              "getfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              24,
+              "getfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              26,
+              "getfield",
+              "dsCanvas.nb"
+            ],
+            [
+              32,
+              "getfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              35,
+              "putfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              38,
+              "getfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              42,
+              "getfield",
+              "dsCanvas._fld1d"
+            ],
+            [
+              47,
+              "getfield",
+              "dsCanvas._fld1d"
+            ],
+            [
+              50,
+              "putfield",
+              "dsCanvas._fld1d"
+            ],
+            [
+              53,
+              "getfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              57,
+              "getfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              61,
+              "getfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              64,
+              "putfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              67,
+              "getfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              71,
+              "getfield",
+              "dsCanvas._fld7e"
+            ],
+            [
+              75,
+              "getfield",
+              "dsCanvas._fld7e"
+            ]
+          ]
+        },
+        {
+          "nome": "paint",
+          "desc": "(Ljavax/microedition/lcdui/Graphics;)V",
+          "tipo_ret": "void",
+          "n_instr": 11,
+          "apis": {
+            "javax/microedition/lcdui/Graphics.drawImage": 1
+          },
+          "constantes": [
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              8,
+              20
+            ]
+          ],
+          "chamadas": [
+            [
+              9,
+              "javax/microedition/lcdui/Graphics.drawImage"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld6b"
+            ],
+            [
+              5,
+              "getfield",
+              "dsCanvas._fld6b"
+            ]
+          ]
+        },
+        {
+          "nome": "pointerPressed",
+          "desc": "(II)V",
+          "tipo_ret": "void",
+          "n_instr": 164,
+          "apis": {},
+          "constantes": [
+            [
+              2,
+              2
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              38,
+              1
+            ],
+            [
+              44,
+              1
+            ],
+            [
+              51,
+              1
+            ],
+            [
+              57,
+              1
+            ],
+            [
+              72,
+              1
+            ],
+            [
+              88,
+              1
+            ],
+            [
+              92,
+              1
+            ],
+            [
+              102,
+              1
+            ],
+            [
+              112,
+              1
+            ],
+            [
+              119,
+              2
+            ],
+            [
+              132,
+              1
+            ],
+            [
+              136,
+              1
+            ],
+            [
+              143,
+              2
+            ],
+            [
+              150,
+              1
+            ],
+            [
+              160,
+              1
+            ]
+          ],
+          "chamadas": [],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld9e"
+            ],
+            [
+              7,
+              "getfield",
+              "dsCanvas._fld2b"
+            ],
+            [
+              10,
+              "getfield",
+              "dsCanvas._fld6e"
+            ],
+            [
+              12,
+              "putfield",
+              "dsCanvas._fld7e"
+            ],
+            [
+              16,
+              "getfield",
+              "dsCanvas._fld3b"
+            ],
+            [
+              19,
+              "getfield",
+              "dsCanvas._fld6e"
+            ],
+            [
+              21,
+              "putfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              23,
+              "getfield",
+              "dsCanvas._fld7e"
+            ],
+            [
+              27,
+              "putfield",
+              "dsCanvas._fld7e"
+            ],
+            [
+              29,
+              "getfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              33,
+              "putfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              35,
+              "getfield",
+              "dsCanvas._fld7e"
+            ],
+            [
+              37,
+              "getfield",
+              "dsCanvas.nb"
+            ],
+            [
+              43,
+              "getfield",
+              "dsCanvas.nb"
+            ],
+            [
+              46,
+              "putfield",
+              "dsCanvas._fld7e"
+            ],
+            [
+              48,
+              "getfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              50,
+              "getfield",
+              "dsCanvas.nb"
+            ],
+            [
+              56,
+              "getfield",
+              "dsCanvas.nb"
+            ],
+            [
+              59,
+              "putfield",
+              "dsCanvas._fld8e"
+            ],
+            [
+              61,
+              "getfield",
+              "dsCanvas.ar"
+            ]
+          ]
+        },
+        {
+          "nome": "run",
+          "desc": "()V",
+          "tipo_ret": "void",
+          "n_instr": 30,
+          "apis": {
+            "java/lang/Runtime.getRuntime": 1,
+            "java/lang/Runtime.freeMemory": 1,
+            "java/lang/Runtime.gc": 1,
+            "javax/microedition/lcdui/Canvas.repaint": 1,
+            "javax/microedition/lcdui/Canvas.serviceRepaints": 1,
+            "java/lang/Thread.sleep": 1
+          },
+          "constantes": [
+            [
+              19,
+              20
+            ]
+          ],
+          "chamadas": [
+            [
+              4,
+              "java/lang/Runtime.getRuntime"
+            ],
+            [
+              7,
+              "java/lang/Runtime.freeMemory"
+            ],
+            [
+              12,
+              "java/lang/Runtime.gc"
+            ],
+            [
+              16,
+              "javax/microedition/lcdui/Canvas.repaint"
+            ],
+            [
+              18,
+              "javax/microedition/lcdui/Canvas.serviceRepaints"
+            ],
+            [
+              23,
+              "java/lang/Thread.sleep"
+            ]
+          ],
+          "fields": [
+            [
+              1,
+              "getfield",
+              "dsCanvas._fld9b"
+            ],
+            [
+              27,
+              "getfield",
+              "dsCanvas._fld9b"
+            ]
+          ]
+        }
+      ],
+      "apis": {
+        "java/util/Random.<init>": 1,
+        "javax/microedition/lcdui/Canvas.<init>": 1,
+        "java/lang/String.<init>": 4,
+        "javax/microedition/lcdui/Canvas.getWidth": 1,
+        "javax/microedition/lcdui/Canvas.getHeight": 1,
+        "javax/microedition/lcdui/Image.createImage": 1,
+        "javax/microedition/lcdui/Image.getGraphics": 1,
+        "javax/microedition/lcdui/Font.getFont": 6,
+        "javax/microedition/lcdui/Font.getHeight": 6,
+        "javax/microedition/lcdui/Display.isColor": 1,
+        "javax/microedition/lcdui/Display.numColors": 2,
+        "javax/microedition/lcdui/Graphics.setColor": 17,
+        "javax/microedition/lcdui/Graphics.fillRect": 6,
+        "javax/microedition/lcdui/Font.stringWidth": 7,
+        "javax/microedition/lcdui/Graphics.setFont": 5,
+        "javax/microedition/lcdui/Graphics.drawString": 11,
+        "javax/microedition/lcdui/Display.setCurrent": 1,
+        "java/lang/Thread.<init>": 1,
+        "java/lang/Thread.isAlive": 1,
+        "java/lang/Thread.start": 1,
+        "java/lang/Math.min": 2,
+        "javax/microedition/lcdui/Graphics.drawRect": 1,
+        "javax/microedition/lcdui/Graphics.drawLine": 2,
+        "javax/microedition/lcdui/Canvas.getGameAction": 1,
+        "javax/microedition/lcdui/Graphics.drawImage": 1,
+        "java/lang/Runtime.getRuntime": 1,
+        "java/lang/Runtime.freeMemory": 1,
+        "java/lang/Runtime.gc": 1,
+        "javax/microedition/lcdui/Canvas.repaint": 1,
+        "javax/microedition/lcdui/Canvas.serviceRepaints": 1,
+        "java/lang/Thread.sleep": 1
+      },
+      "padroes": [
+        "CANVAS",
+        "TEM_PAINT",
+        "TEM_INPUT",
+        "TEM_RUN",
+        "USA_IMAGE"
+      ]
+    }
+  ],
+  "n_classes": 2
+}
