@@ -1,4 +1,4 @@
-// ninjakid - main.c gerado por V12
+// alllights - main.c gerado por V12
 #include <pspkernel.h>
 #include <string.h>
 #include <stdlib.h>
@@ -10,7 +10,7 @@
 #include "j2me_clip.h"
 #include "j2me_runtime.h"
 
-PSP_MODULE_INFO("ninjakid", 0, 1, 0);
+PSP_MODULE_INFO("alllights", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER);
 
 #define SCR_W 480
@@ -76,19 +76,17 @@ void j2me_gc(void) { }
 void* j2me_image_get_graphics(void* img) { return img; }
 
 // Forward typedefs das classes do projeto
-typedef struct gamecanvas_AnimationTask_s gamecanvas_AnimationTask;
-typedef struct gamecanvas_AnimationTask_s gamecanvas_AnimationTask_s;
-typedef struct gamecanvas_s gamecanvas;
-typedef struct gamecanvas_s gamecanvas_s;
-typedef struct main_class_s main_class;
-typedef struct main_class_s main_class_s;
+typedef struct DS_AllLights_s DS_AllLights;
+typedef struct DS_AllLights_s DS_AllLights_s;
+typedef struct dsCanvas_s dsCanvas;
+typedef struct dsCanvas_s dsCanvas_s;
 
 // Globais
 void* _self = 0;
 void* _p1_self = 0;
 void* _p2_self = 0;
 void* _role_self = 0;
-gamecanvas* msf_mc = 0;
+dsCanvas* msf_mc = 0;
 int Game_count = 0;
 int MapCanvas_OFFY = 96;
 int MapCanvas_OFFX = 180;
@@ -98,615 +96,221 @@ int MapCanvas_still = 0;
 int MapCanvas_lightflag = 0;
 
 // Structs
-struct gamecanvas_AnimationTask_s {
-    gamecanvas*  this_0;
+struct DS_AllLights_s {
+    Display*     fld0;
+    dsCanvas*    fld5;
+    Command*     fld6;
+    Command*     fld7;
+    Command*     fld8;
+    Command*     fld9;
 };
 
-struct gamecanvas_s {
-    Image*       offimage;
-    Graphics*    offscreenbuffer;
-    DirectGraphics* DGoffscreenbuffer;
-    Image*       tileimage;
-    Graphics*    tileimagebuffer;
-    DirectGraphics* DGtileimagebuffer;
-    Image**      bobgfx;
-    int          keypressed;
-    int          game_keypressed;
-    int          screenX;
-    int          screenY;
-    main*        midlet;
-    String**     tunes;
-    int          red;
-    int          green;
-    int          blue;
-    int          i;
-    int          mode;
-    int          textmode;
-    int          waiter;
-    RecordStore* HighScore;
-    Timer*       animTimer;
-    int          animperiod;
-    String*      playerName;
-    int          score;
-    String*      soundopt;
-    String*      musicopt;
-    String*      levelopt;
-    int          difficulty;
-    int          optioncur;
-    int          hy;
-    String**     highscoreplayers;
-    int*         highscorepoints;
-    int          arrow_x;
-    unsigned short* playerNamechars;
-    int          lives;
-    Random*      random;
-    int**        sprites;
-    int          anzahlsprites;
-    int          spritecount;
-    Image**      icons;
-    Image*       loadicon;
-    int          anzahl_icons;
-    Image*       loadfont;
-    int          fontwidth;
-    int          fontheight;
-    int          playerXpos;
-    int          playerYpos;
-    int          player;
-    int          playerdir;
-    int          lastmm;
-    int          playeranimdelay;
-    int          logo;
-    int          iecom;
-    int          titel;
-    int          door1;
-    int          door2;
-    int          explo;
-    int          extra;
-    signed char* leveldata;
-    signed char* leveldata2;
-    signed char* maskdata;
-    int          levelbreite;
-    int          levelhoehe;
-    int          levelxpos;
-    int          levelypos;
-    int          lastlevelxpos;
-    int          lastlevelypos;
-    int**        levelinfo;
-    int          level;
-    signed char  MASK_PLAYER_RELEASE;
-    signed char  MASK_WALKWAY;
-    signed char  MASK_WALL;
-    signed char  MASK_LADDER;
-    signed char  MASK_PLAYERRELEASE;
-    signed char  MASK_VASE_START;
-    signed char  MASK_VASE_END;
-    signed char  MASK_FIRERELEASE;
-    signed char  MASK_FIREDIRCHANGE;
-    signed char  MASK_PLASMARELEASE;
-    signed char  MASK_GATE;
-    signed char  MASK_DEAD;
-    int          skycolor;
-    int          faderdir;
-    int          faderypos;
-    int          fading;
-    int64_t      startTime;
-    int64_t      endTime;
-    int          gateblocks;
-    int          titelscrolldir;
-    int          titelwaiter;
-    int          scrollX;
-    int          scrollY;
-    int          softxpos;
-    int          softypos;
-    int          jumpspeed;
-    int          playerjumps;
-    int          lastlevelnr;
-    int          lastenemynr;
-    int          keyuppressed;
-    int          playerfalling;
-    int          XposOffset;
-    int          aufleiter;
-    int          explowaiter;
-    int          extrajumps;
-    int          extrajumpspeed;
-    int          extraypos;
-    signed char  keys;
-    int          diamant;
-    int          playerhit;
-    int          playerhitdir;
-    int          playerpower;
-    int          playerflashing;
-    int          playerlostlive;
-    int          hitrotate;
-    int          hitrotatedelay;
-    int          lastplayerxpos;
-    int          lastplayerypos;
-    int          lastscrollx;
-    int          lastscrolly;
-    int          exploonly;
-    int          firereleased;
-    int          playerONlift;
-    int          extralife;
-    int          swordpower;
-    int          energyfound;
-    int          levelok;
-    Sound*       sound;
-    int          pause;
-};
-
-struct main_s {
-    Display*     display;
-    gamecanvas*  screen;
-    int          started;
+struct dsCanvas_s {
+    Display*     fld0;
+    int          fld0b;
+    int          fld1b;
+    int          fld2b;
+    int          fld3b;
+    Font*        fld4b;
+    int          fld5b;
+    Image*       fld6b;
+    Graphics*    fld7b;
+    Random*      fld8b;
+    int          fld9b;
+    int          fld0c;
+    Thread*      fld1c;
+    int          fld2c;
+    int          fld3c;
+    int          fld4c;
+    int          fld5c;
+    int          fld6c;
+    String*      fld7c;
+    signed char* fld8c;
+    String*      fld9c;
+    signed char* fld0d;
+    int          fld1d;
+    int          fld2d;
+    int          fld3d;
+    int          fld4d;
+    int          fld5d;
+    int          fld6d;
+    int          fld7d;
+    int          fld8d;
+    int          fld9d;
+    int          fld0e;
+    int          fld1e;
+    int          fld2e;
+    int          fld3e;
+    int          fld4e;
+    int          fld5e;
+    int          fld6e;
+    int          fld7e;
+    int          fld8e;
+    int          nb;
+    int*         ar;
+    int          fld9e;
 };
 
 // Prototipos
-void gamecanvas_AnimationTask_constructor(void* self, void* arg0, void* arg1);
-void gamecanvas_AnimationTask_run(void* self);
-void gamecanvas_constructor(void* self, void* arg0);
-void gamecanvas_keyPressed(void* self, int arg0);
-void gamecanvas_keyReleased(void* self, int arg0);
-void gamecanvas_DoAll(void* self);
-void gamecanvas_paint(void* self, void* arg0);
-void gamecanvas_InitGFX(void* self);
-void gamecanvas_LoadGFX(void* self);
-void gamecanvas_InitScores(void* self);
-void gamecanvas_InsertScore(void* self);
-void gamecanvas_GetHighScore(void* self);
-void gamecanvas_AddHighScore(void* self);
-void gamecanvas_InitSpriteMaster(void* self);
-int gamecanvas_bornSprite(void* self, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8);
-void gamecanvas_MoveEnemies(void* self);
-void gamecanvas_drawSprites(void* self, void* arg0);
-void gamecanvas_hideSprite(void* self, int arg0);
-void gamecanvas_showSprite(void* self, int arg0);
-void gamecanvas_killSprite(void* self, int arg0);
-void gamecanvas_setSpritePos(void* self, int arg0, int arg1, int arg2);
-void gamecanvas_setSpriteManipulation(void* self, int arg0, int arg1);
-int gamecanvas_getSpriteManipulation(void* self, int arg0);
-int gamecanvas_getSpriteXpos(void* self, int arg0);
-int gamecanvas_getSpriteYpos(void* self, int arg0);
-void gamecanvas_setSpriteAnim(void* self, int arg0, int arg1);
-int gamecanvas_getSpriteAnim(void* self, int arg0);
-int gamecanvas_getSpriteHeight(void* self, int arg0);
-int gamecanvas_getSpriteWidth(void* self, int arg0);
-int gamecanvas_getGFXHeight(void* self, int arg0);
-int gamecanvas_getGFXWidth(void* self, int arg0);
-int gamecanvas_getHide(void* self, int arg0);
-void gamecanvas_LoadIcons(void* self, void* arg0);
-void gamecanvas_DrawText(void* self, void* arg0, void* arg1, int arg2, int arg3, int arg4);
-void gamecanvas_LoadFont(void* self, void* arg0);
-void gamecanvas_LoadLevel(void* self, void* arg0);
-void gamecanvas_DrawIcons(void* self, int arg0);
-void gamecanvas_MakeSprites(void* self);
-void gamecanvas_DrawIt(void* self, int arg0, int arg1, int arg2, int arg3);
-void gamecanvas_Scroll(void* self, int arg0, int arg1);
-int gamecanvas_GetIcon(void* self, int arg0, int arg1);
-void gamecanvas_SetIcon(void* self, int arg0, int arg1, int arg2, int arg3, int arg4);
-int gamecanvas_checkkollision(void* self, int arg0, int arg1, int arg2, int arg3);
-void gamecanvas_GetLevelInfo(void* self, int arg0);
-void gamecanvas_MovePlayer(void* self, int arg0);
-void gamecanvas_checkHit(void* self);
-void gamecanvas_JumpPlayer(void* self);
-void gamecanvas_FallPlayer(void* self);
-void gamecanvas_ExtraJump(void* self);
-void gamecanvas_openGate(void* self, int arg0, int arg1);
-void gamecanvas_titelscroll(void* self);
-void gamecanvas_PlaySound(void* self, int arg0);
-void gamecanvas_StopSound(void* self);
-void* gamecanvas_convertHexToBinary(void* self, void* arg0);
-void gamecanvas_ReborneEnemy(void* self, int arg0);
-void gamecanvas_PlayerDead(void* self);
-void gamecanvas_resetdata(void* self);
-void gamecanvas_GetExtra(void* self);
-void main_constructor(void* self);
-void main_startApp(void* self);
-void main_pauseApp(void* self);
-void main_destroyApp(void* self, int arg0);
-void main_hideNotify(void* self);
-void main_showNotify(void* self);
-void main_exitRequested(void* self);
+void DS_AllLights_constructor(void* self);
+void DS_AllLights_commandAction(void* self, void* arg0, void* arg1);
+void DS_AllLights_destroyApp(void* self, int arg0);
+void DS_AllLights_pauseApp(void* self);
+void DS_AllLights_startApp(void* self);
+void dsCanvas_constructor(void* self, void* arg0);
+void dsCanvas_mth0b(void* self);
+void dsCanvas_mth0c(void* self);
+void dsCanvas_mth1b(void* self);
+void dsCanvas_mth1c(void* self);
+void dsCanvas_mth2b(void* self);
+void dsCanvas_mth2c(void* self);
+void dsCanvas_mth3b(void* self);
+void dsCanvas_mth4b(void* self);
+void dsCanvas_mth5b(void* self);
+void dsCanvas_mth6b(void* self);
+void dsCanvas_mth7b(void* self);
+void dsCanvas_mth8b(void* self);
+void dsCanvas_mth9b(void* self);
+void dsCanvas_keyPressed(void* self, int arg0);
+void dsCanvas_paint(void* self, void* arg0);
+void dsCanvas_pointerPressed(void* self, int arg0, int arg1);
+void dsCanvas_run(void* self);
 
 // Implementacoes
-void gamecanvas_AnimationTask_constructor(void* self, void* arg0, void* arg1) {
-    gamecanvas_AnimationTask* s = (gamecanvas_AnimationTask*)self;
+void DS_AllLights_constructor(void* self) {
+    DS_AllLights* s = (DS_AllLights*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_AnimationTask_run(void* self) {
-    gamecanvas_AnimationTask* s = (gamecanvas_AnimationTask*)self;
+void DS_AllLights_commandAction(void* self, void* arg0, void* arg1) {
+    DS_AllLights* s = (DS_AllLights*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_constructor(void* self, void* arg0) {
-    gamecanvas* s = (gamecanvas*)self;
+void DS_AllLights_destroyApp(void* self, int arg0) {
+    DS_AllLights* s = (DS_AllLights*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_keyPressed(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
+void DS_AllLights_pauseApp(void* self) {
+    DS_AllLights* s = (DS_AllLights*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_keyReleased(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
+void DS_AllLights_startApp(void* self) {
+    DS_AllLights* s = (DS_AllLights*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_DoAll(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_constructor(void* self, void* arg0) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_paint(void* self, void* arg0) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth0b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_InitGFX(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth0c(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_LoadGFX(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth1b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_InitScores(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth1c(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_InsertScore(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth2b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_GetHighScore(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth2c(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_AddHighScore(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth3b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_InitSpriteMaster(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth4b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-int gamecanvas_bornSprite(void* self, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-void gamecanvas_MoveEnemies(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth5b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_drawSprites(void* self, void* arg0) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth6b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_hideSprite(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth7b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_showSprite(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth8b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_killSprite(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_mth9b(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_setSpritePos(void* self, int arg0, int arg1, int arg2) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_keyPressed(void* self, int arg0) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-void gamecanvas_setSpriteManipulation(void* self, int arg0, int arg1) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_paint(void* self, void* arg0) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-int gamecanvas_getSpriteManipulation(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-int gamecanvas_getSpriteXpos(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-int gamecanvas_getSpriteYpos(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-void gamecanvas_setSpriteAnim(void* self, int arg0, int arg1) {
-    gamecanvas* s = (gamecanvas*)self;
+void dsCanvas_pointerPressed(void* self, int arg0, int arg1) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
 
-int gamecanvas_getSpriteAnim(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-int gamecanvas_getSpriteHeight(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-int gamecanvas_getSpriteWidth(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-int gamecanvas_getGFXHeight(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-int gamecanvas_getGFXWidth(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-int gamecanvas_getHide(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-void gamecanvas_LoadIcons(void* self, void* arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_DrawText(void* self, void* arg0, void* arg1, int arg2, int arg3, int arg4) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_LoadFont(void* self, void* arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_LoadLevel(void* self, void* arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_DrawIcons(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_MakeSprites(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_DrawIt(void* self, int arg0, int arg1, int arg2, int arg3) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_Scroll(void* self, int arg0, int arg1) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-int gamecanvas_GetIcon(void* self, int arg0, int arg1) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-void gamecanvas_SetIcon(void* self, int arg0, int arg1, int arg2, int arg3, int arg4) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-int gamecanvas_checkkollision(void* self, int arg0, int arg1, int arg2, int arg3) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-void gamecanvas_GetLevelInfo(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_MovePlayer(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_checkHit(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_JumpPlayer(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_FallPlayer(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_ExtraJump(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_openGate(void* self, int arg0, int arg1) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_titelscroll(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_PlaySound(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_StopSound(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void* gamecanvas_convertHexToBinary(void* self, void* arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return 0;
-    (void)s;
-    return 0;
-}
-
-void gamecanvas_ReborneEnemy(void* self, int arg0) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_PlayerDead(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_resetdata(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void gamecanvas_GetExtra(void* self) {
-    gamecanvas* s = (gamecanvas*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void main_constructor(void* self) {
-    main* s = (main*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void main_startApp(void* self) {
-    main* s = (main*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void main_pauseApp(void* self) {
-    main* s = (main*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void main_destroyApp(void* self, int arg0) {
-    main* s = (main*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void main_hideNotify(void* self) {
-    main* s = (main*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void main_showNotify(void* self) {
-    main* s = (main*)self;
-    if (!s) return;
-    (void)s;
-}
-
-void main_exitRequested(void* self) {
-    main* s = (main*)self;
+void dsCanvas_run(void* self) {
+    dsCanvas* s = (dsCanvas*)self;
     if (!s) return;
     (void)s;
 }
@@ -716,7 +320,7 @@ int main(void) {
     j2me_input_init();
     j2me_random_init();
 
-    gamecanvas* mc = (gamecanvas*)calloc(1, sizeof(gamecanvas));
+    dsCanvas* mc = (dsCanvas*)calloc(1, sizeof(dsCanvas));
     _self = mc;
     msf_mc = mc;
 
