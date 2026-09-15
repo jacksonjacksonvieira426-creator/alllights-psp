@@ -1,345 +1,732 @@
-// alllights - Port automatico J2ME -> PSP
-// Gerado por portador.py
-// MIDlet: DS_AllLights  Canvas: dsCanvas
-
+// ninjakid - main.c gerado por V12
 #include <pspkernel.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include "j2me_gfx.h"
 #include "j2me_font.h"
 #include "j2me_input.h"
 #include "j2me_image.h"
 #include "j2me_clip.h"
 #include "j2me_runtime.h"
-#include <stdint.h>
 
-// ============================================
-// TIPOS J2ME -> ponteiros opacos em C
-// ============================================
-typedef void* Image;
-typedef void* Graphics;
-typedef void* Font;
-typedef void* String;
-typedef void* Command;
-typedef void* Display;
-typedef void* Displayable;
-typedef void* MIDlet;
-typedef void* Canvas;
-
-PSP_MODULE_INFO("alllights", 0, 1, 0);
+PSP_MODULE_INFO("ninjakid", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER);
 
 #define SCR_W 480
 #define SCR_H 272
 
-// ============================================
-// FORWARD DECLARATIONS das classes do projeto
-// ============================================
-typedef struct DS_AllLights_s DS_AllLights;
-typedef struct dsCanvas_s dsCanvas;
+// Tipos J2ME (todos como void*)
+typedef void* Image;
+typedef void* Graphics;
+typedef void* DirectGraphics;
+typedef void* Font;
+typedef void* String;
+typedef void* StringBuffer;
+typedef void* Command;
+typedef void* Display;
+typedef void* Displayable;
+typedef void* Canvas;
+typedef void* FullCanvas;
+typedef void* GameCanvas;
+typedef void* Random;
+typedef void* Timer;
+typedef void* TimerTask;
+typedef void* Vector;
+typedef void* List;
+typedef void* Form;
+typedef void* TextField;
+typedef void* InputStream;
+typedef void* DataInputStream;
+typedef void* OutputStream;
+typedef void* RecordStore;
+typedef void* Thread;
+typedef void* MIDlet;
+typedef void* Object;
+typedef void* Class;
+typedef void* Math;
+typedef void* System;
+typedef void* Integer;
+typedef void* Long;
+typedef void* Short;
+typedef void* Byte;
+typedef void* Character;
+typedef void* Boolean;
+typedef void* Float;
+typedef void* Double;
+typedef void* Sound;
+typedef void* DeviceControl;
+typedef void* SpriteEvent;
+typedef void* SpriteListener;
+typedef void* SpriteAction;
+typedef void* MIDP;
+typedef void* SoundListener;
+typedef void* Player;
+typedef void* PlayerListener;
+typedef void* Control;
+typedef void* Manager;
+typedef void* DataInputStream2;
+typedef void* ByteArrayInputStream;
+typedef void* ByteArrayOutputStream;
 
-// ============================================
-// ESTRUTURAS DE DADOS (traduzidas do J2ME)
-// ============================================
+// Stubs de biblioteca
+void j2me_canvas_repaint(void) { }
+void j2me_canvas_serviceRepaints(void) { }
+void j2me_gc(void) { }
+void* j2me_image_get_graphics(void* img) { return img; }
 
-// === Classe: DS_AllLights (extends MIDlet) ===
-// Padroes detectados: MIDLET, TEM_STARTAPP
-struct DS_AllLights_s {
-    Display*        _fld0;  // _fld0 (Ljavax/microedition/lcdui/Display;)
-    dsCanvas*       _fld5;  // _fld5 (LdsCanvas;)
-    Command*        _fld6;  // _fld6 (Ljavax/microedition/lcdui/Command;)
-    Command*        _fld7;  // _fld7 (Ljavax/microedition/lcdui/Command;)
-    Command*        _fld8;  // _fld8 (Ljavax/microedition/lcdui/Command;)
-    Command*        _fld9;  // _fld9 (Ljavax/microedition/lcdui/Command;)
+// Forward typedefs das classes do projeto
+typedef struct gamecanvas_AnimationTask_s gamecanvas_AnimationTask;
+typedef struct gamecanvas_AnimationTask_s gamecanvas_AnimationTask_s;
+typedef struct gamecanvas_s gamecanvas;
+typedef struct gamecanvas_s gamecanvas_s;
+typedef struct main_class_s main_class;
+typedef struct main_class_s main_class_s;
+
+// Globais
+void* _self = 0;
+void* _p1_self = 0;
+void* _p2_self = 0;
+void* _role_self = 0;
+gamecanvas* msf_mc = 0;
+int Game_count = 0;
+int MapCanvas_OFFY = 96;
+int MapCanvas_OFFX = 180;
+int MapCanvas_CanvasWidth = 480;
+int MapCanvas_CanvasHeight = 272;
+int MapCanvas_still = 0;
+int MapCanvas_lightflag = 0;
+
+// Structs
+struct gamecanvas_AnimationTask_s {
+    gamecanvas*  this_0;
 };
 
-// === Classe: dsCanvas (extends Canvas) ===
-// Padroes detectados: CANVAS, TEM_PAINT, TEM_INPUT, TEM_RUN, USA_IMAGE
-struct dsCanvas_s {
-    Display*        _fld0;  // _fld0 (Ljavax/microedition/lcdui/Display;)
-    int             _fld0b;  // _fld0b (I)
-    int             _fld1b;  // _fld1b (I)
-    int             _fld2b;  // _fld2b (I)
-    int             _fld3b;  // _fld3b (I)
-    Font*           _fld4b;  // _fld4b (Ljavax/microedition/lcdui/Font;)
-    int             _fld5b;  // _fld5b (I)
-    Image*          _fld6b;  // _fld6b (Ljavax/microedition/lcdui/Image;)
-    Graphics*       _fld7b;  // _fld7b (Ljavax/microedition/lcdui/Graphics;)
-    Random*         _fld8b;  // _fld8b (Ljava/util/Random;)
-    int             _fld9b;  // _fld9b (Z)
-    int             _fld0c;  // _fld0c (Z)
-    Thread*         _fld1c;  // _fld1c (Ljava/lang/Thread;)
-    int             _fld2c;  // _fld2c (Z)
-    int             _fld3c;  // _fld3c (Z)
-    int             _fld4c;  // _fld4c (I)
-    int             _fld5c;  // _fld5c (I)
-    int             _fld6c;  // _fld6c (I)
-    String*         _fld7c;  // _fld7c (Ljava/lang/String;)
-    signed char*    _fld8c;  // _fld8c ([B)
-    String*         _fld9c;  // _fld9c (Ljava/lang/String;)
-    signed char*    _fld0d;  // _fld0d ([B)
-    int             _fld1d;  // _fld1d (I)
-    int             _fld2d;  // _fld2d (I)
-    int             _fld3d;  // _fld3d (I)
-    int             _fld4d;  // _fld4d (I)
-    int             _fld5d;  // _fld5d (I)
-    int             _fld6d;  // _fld6d (I)
-    int             _fld7d;  // _fld7d (I)
-    int             _fld8d;  // _fld8d (I)
-    int             _fld9d;  // _fld9d (I)
-    int             _fld0e;  // _fld0e (I)
-    int             _fld1e;  // _fld1e (I)
-    int             _fld2e;  // _fld2e (I)
-    int             _fld3e;  // _fld3e (I)
-    int             _fld4e;  // _fld4e (I)
-    int             _fld5e;  // _fld5e (I)
-    int             _fld6e;  // _fld6e (I)
-    int             _fld7e;  // _fld7e (I)
-    int             _fld8e;  // _fld8e (I)
-    int             nb;  // nb (I)
-    int*            ar;  // ar ([I)
-    int             _fld9e;  // _fld9e (I)
+struct gamecanvas_s {
+    Image*       offimage;
+    Graphics*    offscreenbuffer;
+    DirectGraphics* DGoffscreenbuffer;
+    Image*       tileimage;
+    Graphics*    tileimagebuffer;
+    DirectGraphics* DGtileimagebuffer;
+    Image**      bobgfx;
+    int          keypressed;
+    int          game_keypressed;
+    int          screenX;
+    int          screenY;
+    main*        midlet;
+    String**     tunes;
+    int          red;
+    int          green;
+    int          blue;
+    int          i;
+    int          mode;
+    int          textmode;
+    int          waiter;
+    RecordStore* HighScore;
+    Timer*       animTimer;
+    int          animperiod;
+    String*      playerName;
+    int          score;
+    String*      soundopt;
+    String*      musicopt;
+    String*      levelopt;
+    int          difficulty;
+    int          optioncur;
+    int          hy;
+    String**     highscoreplayers;
+    int*         highscorepoints;
+    int          arrow_x;
+    unsigned short* playerNamechars;
+    int          lives;
+    Random*      random;
+    int**        sprites;
+    int          anzahlsprites;
+    int          spritecount;
+    Image**      icons;
+    Image*       loadicon;
+    int          anzahl_icons;
+    Image*       loadfont;
+    int          fontwidth;
+    int          fontheight;
+    int          playerXpos;
+    int          playerYpos;
+    int          player;
+    int          playerdir;
+    int          lastmm;
+    int          playeranimdelay;
+    int          logo;
+    int          iecom;
+    int          titel;
+    int          door1;
+    int          door2;
+    int          explo;
+    int          extra;
+    signed char* leveldata;
+    signed char* leveldata2;
+    signed char* maskdata;
+    int          levelbreite;
+    int          levelhoehe;
+    int          levelxpos;
+    int          levelypos;
+    int          lastlevelxpos;
+    int          lastlevelypos;
+    int**        levelinfo;
+    int          level;
+    signed char  MASK_PLAYER_RELEASE;
+    signed char  MASK_WALKWAY;
+    signed char  MASK_WALL;
+    signed char  MASK_LADDER;
+    signed char  MASK_PLAYERRELEASE;
+    signed char  MASK_VASE_START;
+    signed char  MASK_VASE_END;
+    signed char  MASK_FIRERELEASE;
+    signed char  MASK_FIREDIRCHANGE;
+    signed char  MASK_PLASMARELEASE;
+    signed char  MASK_GATE;
+    signed char  MASK_DEAD;
+    int          skycolor;
+    int          faderdir;
+    int          faderypos;
+    int          fading;
+    int64_t      startTime;
+    int64_t      endTime;
+    int          gateblocks;
+    int          titelscrolldir;
+    int          titelwaiter;
+    int          scrollX;
+    int          scrollY;
+    int          softxpos;
+    int          softypos;
+    int          jumpspeed;
+    int          playerjumps;
+    int          lastlevelnr;
+    int          lastenemynr;
+    int          keyuppressed;
+    int          playerfalling;
+    int          XposOffset;
+    int          aufleiter;
+    int          explowaiter;
+    int          extrajumps;
+    int          extrajumpspeed;
+    int          extraypos;
+    signed char  keys;
+    int          diamant;
+    int          playerhit;
+    int          playerhitdir;
+    int          playerpower;
+    int          playerflashing;
+    int          playerlostlive;
+    int          hitrotate;
+    int          hitrotatedelay;
+    int          lastplayerxpos;
+    int          lastplayerypos;
+    int          lastscrollx;
+    int          lastscrolly;
+    int          exploonly;
+    int          firereleased;
+    int          playerONlift;
+    int          extralife;
+    int          swordpower;
+    int          energyfound;
+    int          levelok;
+    Sound*       sound;
+    int          pause;
 };
 
-// ============================================
-// METODOS (traduzidos do bytecode)
-// ============================================
+struct main_s {
+    Display*     display;
+    gamecanvas*  screen;
+    int          started;
+};
 
-// === DS_AllLights.DS_AllLights_constructor (()V) ===
-// Instrucoes: 60
-// APIs usadas:
-//   4x javax/microedition/lcdui/Command.<init> -> ??? javax/microedition/lcdui/Command.<init>
-//   2x javax/microedition/lcdui/Displayable.addCommand -> ??? javax/microedition/lcdui/Displayable.addCommand
-//   1x javax/microedition/midlet/MIDlet.<init> -> ??? javax/microedition/midlet/MIDlet.<init>
-//   1x javax/microedition/lcdui/Display.getDisplay -> j2me_display_get
-//   1x javax/microedition/lcdui/Displayable.setCommandListener -> ??? javax/microedition/lcdui/Displayable.setCommandListener
-void DS_AllLights_constructor() {
-    // TODO: traduzir logica do bytecode
+// Prototipos
+void gamecanvas_AnimationTask_constructor(void* self, void* arg0, void* arg1);
+void gamecanvas_AnimationTask_run(void* self);
+void gamecanvas_constructor(void* self, void* arg0);
+void gamecanvas_keyPressed(void* self, int arg0);
+void gamecanvas_keyReleased(void* self, int arg0);
+void gamecanvas_DoAll(void* self);
+void gamecanvas_paint(void* self, void* arg0);
+void gamecanvas_InitGFX(void* self);
+void gamecanvas_LoadGFX(void* self);
+void gamecanvas_InitScores(void* self);
+void gamecanvas_InsertScore(void* self);
+void gamecanvas_GetHighScore(void* self);
+void gamecanvas_AddHighScore(void* self);
+void gamecanvas_InitSpriteMaster(void* self);
+int gamecanvas_bornSprite(void* self, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8);
+void gamecanvas_MoveEnemies(void* self);
+void gamecanvas_drawSprites(void* self, void* arg0);
+void gamecanvas_hideSprite(void* self, int arg0);
+void gamecanvas_showSprite(void* self, int arg0);
+void gamecanvas_killSprite(void* self, int arg0);
+void gamecanvas_setSpritePos(void* self, int arg0, int arg1, int arg2);
+void gamecanvas_setSpriteManipulation(void* self, int arg0, int arg1);
+int gamecanvas_getSpriteManipulation(void* self, int arg0);
+int gamecanvas_getSpriteXpos(void* self, int arg0);
+int gamecanvas_getSpriteYpos(void* self, int arg0);
+void gamecanvas_setSpriteAnim(void* self, int arg0, int arg1);
+int gamecanvas_getSpriteAnim(void* self, int arg0);
+int gamecanvas_getSpriteHeight(void* self, int arg0);
+int gamecanvas_getSpriteWidth(void* self, int arg0);
+int gamecanvas_getGFXHeight(void* self, int arg0);
+int gamecanvas_getGFXWidth(void* self, int arg0);
+int gamecanvas_getHide(void* self, int arg0);
+void gamecanvas_LoadIcons(void* self, void* arg0);
+void gamecanvas_DrawText(void* self, void* arg0, void* arg1, int arg2, int arg3, int arg4);
+void gamecanvas_LoadFont(void* self, void* arg0);
+void gamecanvas_LoadLevel(void* self, void* arg0);
+void gamecanvas_DrawIcons(void* self, int arg0);
+void gamecanvas_MakeSprites(void* self);
+void gamecanvas_DrawIt(void* self, int arg0, int arg1, int arg2, int arg3);
+void gamecanvas_Scroll(void* self, int arg0, int arg1);
+int gamecanvas_GetIcon(void* self, int arg0, int arg1);
+void gamecanvas_SetIcon(void* self, int arg0, int arg1, int arg2, int arg3, int arg4);
+int gamecanvas_checkkollision(void* self, int arg0, int arg1, int arg2, int arg3);
+void gamecanvas_GetLevelInfo(void* self, int arg0);
+void gamecanvas_MovePlayer(void* self, int arg0);
+void gamecanvas_checkHit(void* self);
+void gamecanvas_JumpPlayer(void* self);
+void gamecanvas_FallPlayer(void* self);
+void gamecanvas_ExtraJump(void* self);
+void gamecanvas_openGate(void* self, int arg0, int arg1);
+void gamecanvas_titelscroll(void* self);
+void gamecanvas_PlaySound(void* self, int arg0);
+void gamecanvas_StopSound(void* self);
+void* gamecanvas_convertHexToBinary(void* self, void* arg0);
+void gamecanvas_ReborneEnemy(void* self, int arg0);
+void gamecanvas_PlayerDead(void* self);
+void gamecanvas_resetdata(void* self);
+void gamecanvas_GetExtra(void* self);
+void main_constructor(void* self);
+void main_startApp(void* self);
+void main_pauseApp(void* self);
+void main_destroyApp(void* self, int arg0);
+void main_hideNotify(void* self);
+void main_showNotify(void* self);
+void main_exitRequested(void* self);
+
+// Implementacoes
+void gamecanvas_AnimationTask_constructor(void* self, void* arg0, void* arg1) {
+    gamecanvas_AnimationTask* s = (gamecanvas_AnimationTask*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === DS_AllLights.DS_AllLights_commandAction ((Ljavax/microedition/lcdui/Command;Ljavax/microedition/lcdui/Displayable;)V) ===
-// Instrucoes: 89
-// APIs usadas:
-//   4x javax/microedition/lcdui/Displayable.removeCommand -> ??? javax/microedition/lcdui/Displayable.removeCommand
-//   4x javax/microedition/lcdui/Displayable.addCommand -> ??? javax/microedition/lcdui/Displayable.addCommand
-//   3x javax/microedition/lcdui/Displayable.setCommandListener -> ??? javax/microedition/lcdui/Displayable.setCommandListener
-//   1x javax/microedition/midlet/MIDlet.notifyDestroyed -> ??? javax/microedition/midlet/MIDlet.notifyDestroyed
-void DS_AllLights_commandAction() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_AnimationTask_run(void* self) {
+    gamecanvas_AnimationTask* s = (gamecanvas_AnimationTask*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === DS_AllLights.DS_AllLights_destroyApp ((Z)V) ===
-// Instrucoes: 8
-// APIs usadas:
-//   1x javax/microedition/lcdui/Display.setCurrent -> j2me_display_set
-void DS_AllLights_destroyApp() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_constructor(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === DS_AllLights.DS_AllLights_pauseApp (()V) ===
-// Instrucoes: 4
-void DS_AllLights_pauseApp() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_keyPressed(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === DS_AllLights.DS_AllLights_startApp (()V) ===
-// Instrucoes: 4
-void DS_AllLights_startApp() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_keyReleased(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas_constructor ((Ljavax/microedition/lcdui/Display;)V) ===
-// Instrucoes: 210
-// APIs usadas:
-//   2x java/lang/String.<init> -> ??? java/lang/String.<init>
-//   2x javax/microedition/lcdui/Font.getFont -> ??? javax/microedition/lcdui/Font.getFont
-//   2x javax/microedition/lcdui/Display.numColors -> ??? javax/microedition/lcdui/Display.numColors
-//   1x javax/microedition/lcdui/Canvas.<init> -> ??? javax/microedition/lcdui/Canvas.<init>
-//   1x javax/microedition/lcdui/Canvas.getWidth -> j2me_canvas_w
-//   1x javax/microedition/lcdui/Canvas.getHeight -> j2me_canvas_h
-//   1x javax/microedition/lcdui/Image.createImage -> j2me_image_create
-//   1x javax/microedition/lcdui/Image.getGraphics -> j2me_image_get_graphics
-void dsCanvas_constructor() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_DoAll(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth0b (()V) ===
-// Instrucoes: 4
-void dsCanvas__mth0b() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_paint(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth0c (()V) ===
-// Instrucoes: 146
-// APIs usadas:
-//   6x javax/microedition/lcdui/Graphics.drawString -> j2me_font_draw
-//   4x javax/microedition/lcdui/Graphics.setColor -> j2me_gfx_set_color
-//   2x javax/microedition/lcdui/Font.stringWidth -> ??? javax/microedition/lcdui/Font.stringWidth
-//   1x javax/microedition/lcdui/Graphics.fillRect -> j2me_gfx_fill_rect
-//   1x javax/microedition/lcdui/Font.getFont -> ??? javax/microedition/lcdui/Font.getFont
-//   1x javax/microedition/lcdui/Graphics.setFont -> j2me_noop
-//   1x javax/microedition/lcdui/Font.getHeight -> ??? javax/microedition/lcdui/Font.getHeight
-void dsCanvas__mth0c() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_InitGFX(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth1b (()V) ===
-// Instrucoes: 141
-void dsCanvas__mth1b() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_LoadGFX(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth1c (()V) ===
-// Instrucoes: 4
-void dsCanvas__mth1c() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_InitScores(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth2b (()V) ===
-// Instrucoes: 55
-// APIs usadas:
-//   2x java/lang/String.<init> -> ??? java/lang/String.<init>
-void dsCanvas__mth2b() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_InsertScore(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth2c (()V) ===
-// Instrucoes: 33
-// APIs usadas:
-//   1x javax/microedition/lcdui/Display.setCurrent -> j2me_display_set
-//   1x java/lang/Thread.<init> -> ??? java/lang/Thread.<init>
-//   1x java/lang/Thread.isAlive -> ??? java/lang/Thread.isAlive
-//   1x java/lang/Thread.start -> j2me_thread_start
-void dsCanvas__mth2c() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_GetHighScore(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth3b (()V) ===
-// Instrucoes: 58
-// APIs usadas:
-//   2x java/lang/Math.min -> min
-void dsCanvas__mth3b() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_AddHighScore(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth4b (()V) ===
-// Instrucoes: 23
-void dsCanvas__mth4b() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_InitSpriteMaster(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth5b (()V) ===
-// Instrucoes: 28
-void dsCanvas__mth5b() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_bornSprite(void* self, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// === dsCanvas.dsCanvas__mth6b (()V) ===
-// Instrucoes: 28
-void dsCanvas__mth6b() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_MoveEnemies(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth7b (()V) ===
-// Instrucoes: 53
-// APIs usadas:
-//   2x javax/microedition/lcdui/Graphics.setColor -> j2me_gfx_set_color
-//   1x javax/microedition/lcdui/Graphics.fillRect -> j2me_gfx_fill_rect
-//   1x javax/microedition/lcdui/Font.getFont -> ??? javax/microedition/lcdui/Font.getFont
-//   1x javax/microedition/lcdui/Font.stringWidth -> ??? javax/microedition/lcdui/Font.stringWidth
-//   1x javax/microedition/lcdui/Graphics.setFont -> j2me_noop
-//   1x javax/microedition/lcdui/Font.getHeight -> ??? javax/microedition/lcdui/Font.getHeight
-//   1x javax/microedition/lcdui/Graphics.drawString -> j2me_font_draw
-void dsCanvas__mth7b() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_drawSprites(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth8b (()V) ===
-// Instrucoes: 304
-// APIs usadas:
-//   7x javax/microedition/lcdui/Graphics.setColor -> j2me_gfx_set_color
-//   3x javax/microedition/lcdui/Graphics.fillRect -> j2me_gfx_fill_rect
-//   2x javax/microedition/lcdui/Graphics.drawLine -> ??? javax/microedition/lcdui/Graphics.drawLine
-//   1x javax/microedition/lcdui/Graphics.drawRect -> ??? javax/microedition/lcdui/Graphics.drawRect
-//   1x javax/microedition/lcdui/Graphics.setFont -> j2me_noop
-//   1x javax/microedition/lcdui/Font.stringWidth -> ??? javax/microedition/lcdui/Font.stringWidth
-//   1x javax/microedition/lcdui/Graphics.drawString -> j2me_font_draw
-void dsCanvas__mth8b() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_hideSprite(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas__mth9b (()V) ===
-// Instrucoes: 138
-// APIs usadas:
-//   4x javax/microedition/lcdui/Graphics.setColor -> j2me_gfx_set_color
-//   3x javax/microedition/lcdui/Font.stringWidth -> ??? javax/microedition/lcdui/Font.stringWidth
-//   3x javax/microedition/lcdui/Font.getHeight -> ??? javax/microedition/lcdui/Font.getHeight
-//   3x javax/microedition/lcdui/Graphics.drawString -> j2me_font_draw
-//   2x javax/microedition/lcdui/Font.getFont -> ??? javax/microedition/lcdui/Font.getFont
-//   2x javax/microedition/lcdui/Graphics.setFont -> j2me_noop
-//   1x javax/microedition/lcdui/Graphics.fillRect -> j2me_gfx_fill_rect
-void dsCanvas__mth9b() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_showSprite(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas_keyPressed ((I)V) ===
-// Instrucoes: 206
-// APIs usadas:
-//   1x javax/microedition/lcdui/Canvas.getGameAction -> j2me_input_get_actions
-void dsCanvas_keyPressed() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_killSprite(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas_paint ((Ljavax/microedition/lcdui/Graphics;)V) ===
-// Instrucoes: 11
-// APIs usadas:
-//   1x javax/microedition/lcdui/Graphics.drawImage -> j2me_image_blit
-void dsCanvas_paint() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_setSpritePos(void* self, int arg0, int arg1, int arg2) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas_pointerPressed ((II)V) ===
-// Instrucoes: 164
-void dsCanvas_pointerPressed() {
-    // TODO: traduzir logica do bytecode
+void gamecanvas_setSpriteManipulation(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
 }
 
-// === dsCanvas.dsCanvas_run (()V) ===
-// Instrucoes: 30
-// APIs usadas:
-//   1x java/lang/Runtime.getRuntime -> ??? java/lang/Runtime.getRuntime
-//   1x java/lang/Runtime.freeMemory -> ??? java/lang/Runtime.freeMemory
-//   1x java/lang/Runtime.gc -> ??? java/lang/Runtime.gc
-//   1x javax/microedition/lcdui/Canvas.repaint -> j2me_canvas_repaint
-//   1x javax/microedition/lcdui/Canvas.serviceRepaints -> ??? javax/microedition/lcdui/Canvas.serviceRepaints
-//   1x java/lang/Thread.sleep -> j2me_sleep
-void dsCanvas_run() {
-    // TODO: traduzir logica do bytecode
+int gamecanvas_getSpriteManipulation(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
 }
 
-// ============================================
-// GAME LOOP PRINCIPAL
-// ============================================
+int gamecanvas_getSpriteXpos(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+int gamecanvas_getSpriteYpos(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+void gamecanvas_setSpriteAnim(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+int gamecanvas_getSpriteAnim(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+int gamecanvas_getSpriteHeight(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+int gamecanvas_getSpriteWidth(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+int gamecanvas_getGFXHeight(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+int gamecanvas_getGFXWidth(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+int gamecanvas_getHide(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+void gamecanvas_LoadIcons(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_DrawText(void* self, void* arg0, void* arg1, int arg2, int arg3, int arg4) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_LoadFont(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_LoadLevel(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_DrawIcons(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_MakeSprites(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_DrawIt(void* self, int arg0, int arg1, int arg2, int arg3) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_Scroll(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+int gamecanvas_GetIcon(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+void gamecanvas_SetIcon(void* self, int arg0, int arg1, int arg2, int arg3, int arg4) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+int gamecanvas_checkkollision(void* self, int arg0, int arg1, int arg2, int arg3) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+void gamecanvas_GetLevelInfo(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_MovePlayer(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_checkHit(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_JumpPlayer(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_FallPlayer(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_ExtraJump(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_openGate(void* self, int arg0, int arg1) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_titelscroll(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_PlaySound(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_StopSound(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void* gamecanvas_convertHexToBinary(void* self, void* arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return 0;
+    (void)s;
+    return 0;
+}
+
+void gamecanvas_ReborneEnemy(void* self, int arg0) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_PlayerDead(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_resetdata(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void gamecanvas_GetExtra(void* self) {
+    gamecanvas* s = (gamecanvas*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_constructor(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_startApp(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_pauseApp(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_destroyApp(void* self, int arg0) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_hideNotify(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_showNotify(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
+
+void main_exitRequested(void* self) {
+    main* s = (main*)self;
+    if (!s) return;
+    (void)s;
+}
 
 int main(void) {
     j2me_gfx_init();
     j2me_input_init();
     j2me_random_init();
 
+    gamecanvas* mc = (gamecanvas*)calloc(1, sizeof(gamecanvas));
+    _self = mc;
+    msf_mc = mc;
+
     while (1) {
         j2me_input_update();
         if (j2me_input_should_quit()) break;
-
         j2me_gfx_begin_frame();
         j2me_gfx_clear(0x101020);
-
-        // TODO: chamar metodos do jogo aqui
-        // DS_AllLights_startApp();
-        // dsCanvas_paint();
-
         j2me_gfx_flip();
     }
-
     j2me_gfx_shutdown();
     sceKernelExitGame();
     return 0;
